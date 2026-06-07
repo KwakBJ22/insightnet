@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-body: 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Noto Serif KR', ui-serif, Georgia, serif;
+
+  --color-background-50: oklch(0.988 0.002 90);
+  --color-background-100: oklch(0.96 0.004 90);
+  --color-background-200: oklch(0.92 0.006 90);
+  --color-background-300: oklch(0.86 0.008 85);
+  --color-background-950: oklch(0.205 0.014 60);
+
+  --color-foreground-300: oklch(0.72 0.01 60);
+  --color-foreground-400: oklch(0.62 0.012 60);
+  --color-foreground-500: oklch(0.52 0.014 60);
+  --color-foreground-600: oklch(0.42 0.016 60);
+  --color-foreground-700: oklch(0.35 0.018 60);
+  --color-foreground-900: oklch(0.22 0.02 60);
+
+  --color-primary-100: oklch(0.94 0.04 78);
+  --color-primary-200: oklch(0.88 0.08 78);
+  --color-primary-400: oklch(0.74 0.14 78);
+  --color-primary-500: oklch(0.68 0.17 78);
+  --color-primary-600: oklch(0.6 0.16 78);
+  --color-primary-700: oklch(0.52 0.14 78);
+
+  --color-accent-100: oklch(0.94 0.04 160);
+  --color-accent-500: oklch(0.65 0.15 160);
+  --color-accent-600: oklch(0.58 0.14 160);
+  --color-accent-700: oklch(0.5 0.12 160);
+
+  --color-secondary-100: oklch(0.94 0.03 200);
+  --color-secondary-500: oklch(0.62 0.1 200);
+  --color-secondary-600: oklch(0.54 0.09 200);
+  --color-secondary-700: oklch(0.46 0.08 200);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-foreground-900);
+  background-color: var(--color-background-50);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
