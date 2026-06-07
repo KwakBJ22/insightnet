@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Reveal from '../Reveal'
 import { portfolioSection, type PortfolioCategory } from '../../data/site'
 
@@ -42,7 +43,10 @@ export default function PortfolioSection() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((project, i) => (
             <Reveal key={project.id} delay={i * 80}>
-              <article className="group overflow-hidden rounded-2xl border border-background-200 bg-white transition hover:-translate-y-1 hover:shadow-lg">
+              <Link
+                to={`/portfolio/${project.id}`}
+                className="group block overflow-hidden rounded-2xl border border-background-200 bg-white transition hover:-translate-y-1 hover:shadow-lg"
+              >
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={project.image}
@@ -69,7 +73,7 @@ export default function PortfolioSection() {
                     ))}
                   </div>
                 </div>
-              </article>
+              </Link>
             </Reveal>
           ))}
         </div>

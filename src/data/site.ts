@@ -1,10 +1,3 @@
-export const navLinks = [
-  { label: 'About', href: '#history' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
-] as const
-
 export const hero = {
   mainTitle: '2004년부터 이어진 혁신, 웹을 넘어 AI와 O2O로',
   subTitle:
@@ -194,34 +187,34 @@ export const footer = {
     {
       title: 'Services',
       links: [
-        { label: 'Web Development', href: '#services' },
-        { label: 'App Development', href: '#services' },
-        { label: 'AI Solutions', href: '#services' },
-        { label: 'O2O Platform', href: '#services' },
+        { label: 'Web Development', href: '/#services' },
+        { label: 'App Development', href: '/#services' },
+        { label: 'AI Solutions', href: '/#services' },
+        { label: 'O2O Platform', href: '/#services' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { label: 'About Us', href: '#history' },
-        { label: 'Portfolio', href: '#portfolio' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'About Us', href: '/about' },
+        { label: 'Portfolio', href: '/#portfolio' },
+        { label: 'Contact', href: '/#contact' },
       ],
     },
     {
       title: 'Resources',
       links: [
-        { label: 'Blog', href: '#' },
-        { label: 'Case Studies', href: '#portfolio' },
-        { label: 'Tech Stack', href: '#services' },
-        { label: 'FAQ', href: '#' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Case Studies', href: '/#portfolio' },
+        { label: 'Tech Stack', href: '/#services' },
+        { label: 'FAQ', href: '/faq' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: '개인정보처리방침', href: '#' },
-        { label: '이용약관', href: '#' },
+        { label: '개인정보처리방침', href: '/privacy' },
+        { label: '이용약관', href: '/terms' },
       ],
     },
   ],

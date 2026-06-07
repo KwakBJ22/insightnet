@@ -26,6 +26,17 @@ const images = [
   { filename: 'portfolio-04.jpg', url: 'https://picsum.photos/id/1080/1200/800' },
   { filename: 'portfolio-05.jpg', url: 'https://picsum.photos/id/146/1200/800' },
   { filename: 'portfolio-06.jpg', url: 'https://picsum.photos/id/366/1200/800' },
+  { filename: 'about-hero-bg.jpg', url: 'https://picsum.photos/id/283/1920/800' },
+  { filename: 'blog-hero-bg.jpg', url: 'https://picsum.photos/id/373/1920/600' },
+  { filename: 'faq-hero-bg.jpg', url: 'https://picsum.photos/id/312/1920/500' },
+  { filename: 'blog-01.jpg', url: 'https://picsum.photos/id/60/800/500' },
+  { filename: 'blog-02.jpg', url: 'https://picsum.photos/id/201/800/500' },
+  { filename: 'blog-03.jpg', url: 'https://picsum.photos/id/1080/800/500' },
+  { filename: 'blog-04.jpg', url: 'https://picsum.photos/id/119/800/500' },
+  { filename: 'blog-05.jpg', url: 'https://picsum.photos/id/326/800/500' },
+  { filename: 'blog-06.jpg', url: 'https://picsum.photos/id/146/800/500' },
+  { filename: 'blog-07.jpg', url: 'https://picsum.photos/id/48/800/500' },
+  { filename: 'blog-08.jpg', url: 'https://picsum.photos/id/160/800/500' },
 ]
 
 async function downloadImage(filename, url) {
