@@ -11,8 +11,7 @@ export const hero = {
     '비즈니스의 시작부터 미래의 디지털 전환까지, 인사이트네트가 함께합니다.',
   ctaPrimary: '포트폴리오 보기',
   ctaSecondary: '프로젝트 문의하기',
-  backgroundImage:
-    'https://readdy.ai/api/search-image?query=Abstract%20futuristic%20digital%20environment%20with%20flowing%20geometric%20mesh%20networks%20and%20luminous%20emerald%20green%20energy%20waves%20cascading%20through%20a%20deep%20charcoal%20black%20void%2C%20warm%20golden%20light%20particles%20rising%20upward%20like%20digital%20fireflies%2C%20sophisticated%20ambient%20occlusion%20creating%20depth%2C%20smooth%203D%20rendered%20technology%20concept%20art%2C%20editorial%20quality%20dark%20technological%20atmosphere&width=1920&height=1080&seq=hero-bg&orientation=landscape',
+  backgroundImage: '/images/hero-bg.jpg',
 } as const
 
 export const historySection = {
@@ -60,8 +59,7 @@ export const statsSection = {
     { value: '500+', label: '완료 프로젝트' },
     { value: '200+', label: '누적 고객사' },
   ],
-  backgroundImage:
-    'https://readdy.ai/api/search-image?query=Abstract%20modern%20digital%20agency%20office%20interior%20minimalist%20design%20with%20warm%20lighting%2C%20geometric%20shapes%2C%20clean%20architectural%20lines%2C%20dark%20accent%20walls%2C%20contemporary%20workspace%20aesthetic%2C%20warm%20beige%20and%20charcoal%20tones&width=1920&height=1080&seq=stats-bg&orientation=landscape',
+  backgroundImage: '/images/stats-bg.jpg',
 } as const
 
 export const servicesSection = {
@@ -75,8 +73,7 @@ export const servicesSection = {
       description:
         '최신 기술 스택을 활용한 반응형 웹사이트와 크로스플랫폼 네이티브 앱을 구축합니다. 사용자 경험을 최우선으로 설계된 맞춤형 디지털 프로덕트를 제공합니다.',
       keywords: ['React', 'Flutter', 'Node.js', 'AWS'],
-      image:
-        'https://readdy.ai/api/search-image?query=Modern%20minimalist%20abstract%20composition%20representing%20web%20and%20mobile%20application%20development%2C%20emerald%20green%20and%20teal%20color%20palette%20against%20a%20dark%20charcoal%20background&width=800&height=600&seq=svc-web-app&orientation=landscape',
+      image: '/images/service-web-app.jpg',
     },
     {
       id: 'ai',
@@ -85,8 +82,7 @@ export const servicesSection = {
       description:
         '비즈니스 효율화를 위한 생성형 AI 도입부터 기업 맞춤형 AI 모델 개발까지, 데이터 기반의 지능형 솔루션으로 경쟁력을 강화합니다.',
       keywords: ['LLM', 'RAG', 'Computer Vision', 'MLOps'],
-      image:
-        'https://readdy.ai/api/search-image?query=Abstract%20visualization%20of%20artificial%20intelligence%20with%20interconnected%20neural%20network%20nodes%20glowing%20with%20warm%20amber%20and%20gold%20energy&width=800&height=600&seq=svc-ai&orientation=landscape',
+      image: '/images/service-ai.jpg',
     },
     {
       id: 'o2o',
@@ -95,8 +91,7 @@ export const servicesSection = {
       description:
         '온라인과 오프라인을 정밀하게 연결하는 비즈니스 아키텍처를 구현합니다. 실시간 데이터 동기화와 통합 예약·결제 시스템으로 완성하는 O2O 경험을 제공합니다.',
       keywords: ['Real-time Sync', 'IoT', 'Payment', 'Logistics'],
-      image:
-        'https://readdy.ai/api/search-image?query=Abstract%20representation%20bridging%20online%20digital%20world%20and%20offline%20physical%20reality%2C%20sage%20green%20and%20muted%20olive%20tones&width=800&height=600&seq=svc-o2o&orientation=landscape',
+      image: '/images/service-o2o.jpg',
     },
     {
       id: 'dx',
@@ -105,8 +100,7 @@ export const servicesSection = {
       description:
         '비즈니스 진단부터 전략 수립, 실행 및 고도화까지 전 과정을 함께하는 맞춤형 디지털 전환 컨설팅을 제공합니다. 귀사의 비즈니스에 진정한 인사이트를 더합니다.',
       keywords: ['Strategy', 'Process Innovation', 'Data Analytics', 'Cloud Migration'],
-      image:
-        'https://readdy.ai/api/search-image?query=Abstract%20digital%20transformation%20visualization%20with%20geometric%20shapes%20evolving%2C%20teal%20and%20amber%20dual%20tone%20color%20scheme&width=800&height=600&seq=svc-dx&orientation=landscape',
+      image: '/images/service-dx.jpg',
     },
   ],
 } as const
@@ -129,8 +123,7 @@ export const portfolioSection = {
       category: 'web' as const,
       description: 'React 기반 헤드리스 커머스, 12개국 멀티랭귀지 지원',
       tags: ['React', 'Node.js', 'AWS'],
-      image:
-        'https://readdy.ai/api/search-image?query=Premium%20modern%20website%20interface%20design%20mockup%20floating%20on%20a%20dark%20background%20with%20emerald%20green%20accent%20elements&width=1200&height=800&seq=port-01&orientation=landscape',
+      image: '/images/portfolio-01.jpg',
     },
     {
       id: 2,
@@ -138,8 +131,7 @@ export const portfolioSection = {
       category: 'ai-o2o' as const,
       description: '딥러닝 모델을 활용한 실시간 의료 영상 판독 플랫폼',
       tags: ['AI', 'Computer Vision', 'Healthcare'],
-      image:
-        'https://readdy.ai/api/search-image?query=Artificial%20intelligence%20platform%20interface%20concept%20with%20neural%20network%20visualization%20dashboard&width=1200&height=800&seq=port-02&orientation=landscape',
+      image: '/images/portfolio-02.jpg',
     },
     {
       id: 3,
@@ -147,8 +139,7 @@ export const portfolioSection = {
       category: 'app' as const,
       description: 'Flutter 크로스플랫폼, 실시간 금융 데이터 대시보드',
       tags: ['Flutter', 'Fintech', 'Real-time'],
-      image:
-        'https://readdy.ai/api/search-image?query=Mobile%20application%20interface%20showcase%20featuring%20sleek%20modern%20design%20with%20dark%20theme%20and%20warm%20amber%20accent%20colors&width=1200&height=800&seq=port-03&orientation=landscape',
+      image: '/images/portfolio-03.jpg',
     },
     {
       id: 4,
@@ -156,8 +147,7 @@ export const portfolioSection = {
       category: 'ai-o2o' as const,
       description: 'IoT 센서 연동 생산라인 실시간 모니터링 및 예측 정비',
       tags: ['IoT', 'AI', 'Manufacturing'],
-      image:
-        'https://readdy.ai/api/search-image?query=Smart%20factory%20IoT%20monitoring%20dashboard%20with%20real-time%20data%20visualization%20and%20industrial%20sensors&width=1200&height=800&seq=port-04&orientation=landscape',
+      image: '/images/portfolio-04.jpg',
     },
     {
       id: 5,
@@ -165,8 +155,7 @@ export const portfolioSection = {
       category: 'web' as const,
       description: 'B2B 데이터 분석 SaaS, 커스터마이즈 가능한 위젯 시스템',
       tags: ['Vue.js', 'D3.js', 'SaaS'],
-      image:
-        'https://readdy.ai/api/search-image?query=Enterprise%20SaaS%20analytics%20dashboard%20with%20customizable%20widgets%20and%20data%20visualization%20panels&width=1200&height=800&seq=port-05&orientation=landscape',
+      image: '/images/portfolio-05.jpg',
     },
     {
       id: 6,
@@ -174,8 +163,7 @@ export const portfolioSection = {
       category: 'app' as const,
       description: '온·오프라인 통합 재고관리 및 개인화 추천 엔진 탑재',
       tags: ['React Native', 'AI', 'Retail'],
-      image:
-        'https://readdy.ai/api/search-image?query=Omnichannel%20retail%20mobile%20app%20interface%20with%20inventory%20management%20and%20personalized%20recommendations&width=1200&height=800&seq=port-06&orientation=landscape',
+      image: '/images/portfolio-06.jpg',
     },
   ],
 } as const

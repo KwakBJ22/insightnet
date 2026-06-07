@@ -6,3 +6,5 @@ ref.html
 ref.css
 ref.js
 extract-*.mjs
+
+.vercel
