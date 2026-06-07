@@ -1,29 +1,6 @@
 import { Link } from 'react-router-dom'
+import SiteLink from '../ui/SiteLink'
 import { footer } from '../../data/site'
-
-function FooterLink({ href, label }: { href: string; label: string }) {
-  if (href.startsWith('#')) {
-    return (
-      <Link to={`/${href}`} className="text-sm text-background-50/60 transition hover:text-primary-400">
-        {label}
-      </Link>
-    )
-  }
-
-  if (href.startsWith('/#')) {
-    return (
-      <Link to={href} className="text-sm text-background-50/60 transition hover:text-primary-400">
-        {label}
-      </Link>
-    )
-  }
-
-  return (
-    <Link to={href} className="text-sm text-background-50/60 transition hover:text-primary-400">
-      {label}
-    </Link>
-  )
-}
 
 export default function Footer() {
   return (
@@ -48,7 +25,12 @@ export default function Footer() {
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <FooterLink href={link.href} label={link.label} />
+                    <SiteLink
+                      href={link.href}
+                      className="text-sm text-background-50/60 transition hover:text-primary-400"
+                    >
+                      {link.label}
+                    </SiteLink>
                   </li>
                 ))}
               </ul>

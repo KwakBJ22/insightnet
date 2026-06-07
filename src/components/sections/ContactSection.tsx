@@ -24,15 +24,15 @@ export default function ContactSection() {
             <div className="mt-10 space-y-4">
               <div className="flex items-center gap-3 text-foreground-600">
                 <i className="ri-mail-line text-primary-500" />
-                <span>contact@insightnet.co.kr</span>
+                <span>futuregram7@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-foreground-600">
                 <i className="ri-phone-line text-primary-500" />
-                <span>02-1234-5678</span>
+                <span>010-7308-0098</span>
               </div>
               <div className="flex items-center gap-3 text-foreground-600">
                 <i className="ri-map-pin-line text-primary-500" />
-                <span>서울특별시 강남구</span>
+                <span>화성시 동탄구 동탄대로 646-2, 메가비즈타워 A동 916호</span>
               </div>
             </div>
           </Reveal>

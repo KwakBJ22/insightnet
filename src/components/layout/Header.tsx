@@ -1,41 +1,7 @@
-import type { ReactNode } from 'react'
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import SiteLink from '../ui/SiteLink'
 import { mainNavLinks, resolveNavHref } from '../../lib/navigation'
-
-function NavAnchor({
-  href,
-  className,
-  onClick,
-  children,
-}: {
-  href: string
-  className: string
-  onClick?: () => void
-  children: ReactNode
-}) {
-  if (href.startsWith('#')) {
-    return (
-      <a href={href} className={className} onClick={onClick}>
-        {children}
-      </a>
-    )
-  }
-
-  if (href.startsWith('/#')) {
-    return (
-      <Link to={href} className={className} onClick={onClick}>
-        {children}
-      </Link>
-    )
-  }
-
-  return (
-    <Link to={href} className={className} onClick={onClick}>
-      {children}
-    </Link>
-  )
-}
 
 export default function Header() {
   const { pathname } = useLocation()
@@ -69,6 +35,12 @@ export default function Header() {
   const menuButtonClass =
     isHome && !scrolled ? 'text-background-50' : 'text-foreground-900'
 
+  const contactLink = resolveNavHref(pathname, {
+    label: 'Contact',
+    path: '/#contact',
+    homeHash: '#contact',
+  })
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -87,24 +59,20 @@ export default function Header() {
 
         <div className="hidden items-center gap-8 md:flex">
           {mainNavLinks.map((link) => (
-            <NavAnchor
+            <SiteLink
               key={link.path}
               href={resolveNavHref(pathname, link)}
               className={`text-sm font-medium transition-colors ${linkClass}`}
             >
               {link.label}
-            </NavAnchor>
+            </SiteLink>
           ))}
-          <NavAnchor
-            href={resolveNavHref(pathname, {
-              label: 'Contact',
-              path: '/#contact',
-              homeHash: '#contact',
-            })}
+          <SiteLink
+            href={contactLink}
             className="rounded-lg bg-primary-500 px-5 py-2.5 text-sm font-semibold text-background-50 transition hover:bg-primary-600"
           >
             Contact
-          </NavAnchor>
+          </SiteLink>
         </div>
 
         <button
@@ -121,26 +89,22 @@ export default function Header() {
         <div className="border-t border-background-200 bg-background-50 px-6 py-4 md:hidden">
           <div className="flex flex-col gap-3">
             {mainNavLinks.map((link) => (
-              <NavAnchor
+              <SiteLink
                 key={link.path}
                 href={resolveNavHref(pathname, link)}
                 className="text-sm font-medium text-foreground-700"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
-              </NavAnchor>
+              </SiteLink>
             ))}
-            <NavAnchor
-              href={resolveNavHref(pathname, {
-                label: 'Contact',
-                path: '/#contact',
-                homeHash: '#contact',
-              })}
+            <SiteLink
+              href={contactLink}
               className="rounded-lg bg-primary-500 px-5 py-2.5 text-center text-sm font-semibold text-background-50"
               onClick={() => setMenuOpen(false)}
             >
               Contact
-            </NavAnchor>
+            </SiteLink>
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import SiteLink from '../components/ui/SiteLink'
 import PageHero from '../components/ui/PageHero'
 import Reveal from '../components/Reveal'
 import { aboutPage } from '../data/about'
@@ -137,12 +137,12 @@ export default function AboutPage() {
       <section className="bg-background-50 px-6 py-16 text-center md:px-10">
         <Reveal>
           <p className="text-foreground-500">프로젝트에 대해 이야기해 보세요.</p>
-          <Link
-            to="/#contact"
+          <SiteLink
+            href="/#contact"
             className="mt-4 inline-block rounded-lg bg-primary-500 px-8 py-3 text-sm font-semibold text-background-50 transition hover:bg-primary-600"
           >
             프로젝트 문의하기
-          </Link>
+          </SiteLink>
         </Reveal>
       </section>
     </main>

@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import Reveal from '../components/Reveal'
+import SiteLink from '../components/ui/SiteLink'
 import { getPortfolioDetail, portfolioDetails } from '../data/portfolioDetails'
 
 export default function PortfolioDetailPage() {
@@ -13,12 +14,12 @@ export default function PortfolioDetailPage() {
           <h1 className="font-heading text-2xl font-bold text-foreground-900">
             프로젝트를 찾을 수 없습니다
           </h1>
-          <Link
-            to="/#portfolio"
+          <SiteLink
+            href="/#portfolio"
             className="mt-4 inline-block cursor-pointer rounded-full bg-primary-500 px-6 py-2 text-sm font-medium whitespace-nowrap text-background-50 transition-colors hover:bg-primary-600"
           >
             포트폴리오로 돌아가기
-          </Link>
+          </SiteLink>
         </div>
       </main>
     )
@@ -40,13 +41,13 @@ export default function PortfolioDetailPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background-950 via-background-950/80 to-background-950/40" />
         </div>
         <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-24">
-          <Link
-            to="/#portfolio"
+          <SiteLink
+            href="/#portfolio"
             className="mb-6 inline-flex items-center gap-1 text-sm text-background-50/60 transition hover:text-background-50"
           >
             <i className="ri-arrow-left-line" />
             포트폴리오
-          </Link>
+          </SiteLink>
           <span className="mb-4 inline-block rounded-full bg-primary-500/20 px-3 py-1 text-xs font-medium text-primary-300">
             {project.categoryLabel}
           </span>

@@ -5,7 +5,7 @@ export type NavLink = {
 }
 
 export const mainNavLinks: NavLink[] = [
-  { label: 'About', path: '/about', homeHash: '#history' },
+  { label: 'About', path: '/about', homeHash: '/about' },
   { label: 'Services', path: '/#services', homeHash: '#services' },
   { label: 'Portfolio', path: '/#portfolio', homeHash: '#portfolio' },
   { label: 'Contact', path: '/#contact', homeHash: '#contact' },
@@ -13,10 +13,32 @@ export const mainNavLinks: NavLink[] = [
 
 export function resolveNavHref(pathname: string, link: NavLink): string {
   if (pathname === '/') return link.homeHash
-  if (link.path.startsWith('/#')) return link.path
   return link.path
 }
 
-export function isExternalHash(href: string): boolean {
-  return href.startsWith('#')
+export function scrollToHash(hash: string) {
+  const id = hash.replace(/^#/, '')
+  if (!id) {
+    scrollToTop()
+    return
+  }
+
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+export function scrollToTop(behavior: ScrollBehavior = 'smooth') {
+  window.scrollTo({ top: 0, behavior })
+}
+
+export function isHashHref(href: string): boolean {
+  return href.startsWith('#') || href.startsWith('/#')
+}
+
+export function parseHashFromHref(href: string): string | null {
+  if (href.startsWith('/#')) return href.slice(1)
+  if (href.startsWith('#')) return href
+  return null
 }

@@ -1,4 +1,5 @@
 import { hero } from '../../data/site'
+import SiteLink from '../ui/SiteLink'
 
 export default function HeroSection() {
   return (
@@ -20,18 +21,18 @@ export default function HeroSection() {
           {hero.subTitle}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
+          <SiteLink
             href="#portfolio"
             className="w-full rounded-lg bg-primary-500 px-8 py-3.5 text-sm font-semibold text-background-50 transition hover:bg-primary-600 sm:w-auto"
           >
             {hero.ctaPrimary}
-          </a>
-          <a
+          </SiteLink>
+          <SiteLink
             href="#contact"
             className="w-full rounded-lg border border-background-50/30 px-8 py-3.5 text-sm font-semibold text-background-50 transition hover:bg-background-50/10 sm:w-auto"
           >
             {hero.ctaSecondary}
-          </a>
+          </SiteLink>
         </div>
       </div>
 

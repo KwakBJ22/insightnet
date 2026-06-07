@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import SiteLink from '../components/ui/SiteLink'
 import PageHero from '../components/ui/PageHero'
 import Reveal from '../components/Reveal'
 import { faqPage, type FaqCategory } from '../data/faq'
@@ -101,12 +101,12 @@ export default function FaqPage() {
               <p className="text-sm text-foreground-600">
                 원하는 답변을 찾지 못하셨나요?
               </p>
-              <Link
-                to="/#contact"
+              <SiteLink
+                href="/#contact"
                 className="mt-4 inline-block rounded-lg bg-primary-500 px-6 py-2.5 text-sm font-semibold text-background-50 transition hover:bg-primary-600"
               >
                 직접 문의하기
-              </Link>
+              </SiteLink>
             </div>
           </Reveal>
         </div>

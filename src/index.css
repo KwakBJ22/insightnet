@@ -39,6 +39,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#history,
+#services,
+#portfolio,
+#contact {
+  scroll-margin-top: 5rem;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-foreground-900);
