@@ -13,26 +13,22 @@ export default function ServicesSection() {
         </Reveal>
 
         <div className="mt-14 space-y-16 md:space-y-24">
-          {servicesSection.items.map((item, index) => {
-            const reversed = index % 2 === 1
-            return (
+          {servicesSection.items.map((item) => (
               <Reveal key={item.id} delay={100}>
-                <div
-                  className={`grid items-center gap-8 md:grid-cols-2 md:gap-12 ${
-                    reversed ? 'md:[direction:rtl]' : ''
-                  }`}
-                >
-                  <div className={reversed ? 'md:[direction:ltr]' : ''}>
-                    <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                      <img
-                        src={item.image}
-                        alt={item.subtitle}
-                        className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                        loading="lazy"
-                      />
+                <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-8 md:flex-row md:items-center md:justify-center md:gap-6 lg:max-w-5xl lg:gap-8">
+                  <div className="shrink-0 md:pr-4 lg:pr-8">
+                    <div className="w-full max-w-[240px] rounded-2xl border border-background-200/80 bg-white p-3 shadow-sm sm:max-w-[260px] md:max-w-[220px] lg:max-w-[240px]">
+                      <div className="flex aspect-[5/4] items-center justify-center overflow-hidden rounded-xl bg-background-50">
+                        <img
+                          src={item.image}
+                          alt={item.subtitle}
+                          className="max-h-full max-w-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div className={reversed ? 'md:[direction:ltr]' : ''}>
+                  <div className="w-full md:-ml-2 md:max-w-md md:pl-0 lg:-ml-4">
                     <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
                       {item.title}
                     </p>
@@ -53,8 +49,7 @@ export default function ServicesSection() {
                   </div>
                 </div>
               </Reveal>
-            )
-          })}
+          ))}
         </div>
       </div>
     </section>

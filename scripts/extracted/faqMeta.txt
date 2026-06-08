@@ -1,0 +1,1 @@
+Ds={title:`자주 묻는 질문`,subtitle:`프로젝트 문의부터 기술 스택까지, 궁금하신 점에 대한 답변을 모았습니다.`},Os=[{id:`all`,label:`전체`},{id:`project`,label:`프로젝트 진행`},{id:`tech`,label:`기술 & 역량`},{id:`cost`,label:`비용 & 계약`}],ks=[{id:1,ca
