@@ -66,7 +66,7 @@ export const servicesSection = {
       description:
         '최신 기술 스택을 활용한 반응형 웹사이트와 크로스플랫폼 네이티브 앱을 구축합니다. 사용자 경험을 최우선으로 설계된 맞춤형 디지털 프로덕트를 제공합니다.',
       keywords: ['React', 'Flutter', 'Node.js', 'AWS'],
-      image: '/images/service-web-app.jpg',
+      image: '/images/web-app.png',
     },
     {
       id: 'ai',
@@ -75,7 +75,7 @@ export const servicesSection = {
       description:
         '비즈니스 효율화를 위한 생성형 AI 도입부터 기업 맞춤형 AI 모델 개발까지, 데이터 기반의 지능형 솔루션으로 경쟁력을 강화합니다.',
       keywords: ['LLM', 'RAG', 'Computer Vision', 'MLOps'],
-      image: '/images/service-ai.jpg',
+      image: '/images/AI-Solutions.png',
     },
     {
       id: 'o2o',
@@ -84,7 +84,7 @@ export const servicesSection = {
       description:
         '온라인과 오프라인을 정밀하게 연결하는 비즈니스 아키텍처를 구현합니다. 실시간 데이터 동기화와 통합 예약·결제 시스템으로 완성하는 O2O 경험을 제공합니다.',
       keywords: ['Real-time Sync', 'IoT', 'Payment', 'Logistics'],
-      image: '/images/service-o2o.jpg',
+      image: '/images/O2O-Platform.png',
     },
     {
       id: 'dx',
@@ -93,7 +93,7 @@ export const servicesSection = {
       description:
         '비즈니스 진단부터 전략 수립, 실행 및 고도화까지 전 과정을 함께하는 맞춤형 디지털 전환 컨설팅을 제공합니다. 귀사의 비즈니스에 진정한 인사이트를 더합니다.',
       keywords: ['Strategy', 'Process Innovation', 'Data Analytics', 'Cloud Migration'],
-      image: '/images/service-dx.jpg',
+      image: '/images/Digital%20-Transformation.png',
     },
   ],
 } as const
