@@ -48,7 +48,7 @@ export const statsSection = {
   title: '숫자로 보는 인사이트네트',
   stats: [
     { value: '20+', label: '업력 (년)' },
-    { value: '60+', label: '팀 멤버' },
+    { value: '60+', label: '누적 팀 멤버' },
     { value: '500+', label: '완료 프로젝트' },
     { value: '200+', label: '누적 고객사' },
   ],
@@ -176,7 +176,8 @@ export const contactSection = {
     company: '선택사항',
     message: '프로젝트에 대해 자유롭게 설명해 주세요 (목표, 예산, 일정 등)',
   },
-  successMessage: '문의가 정상적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.',
+  successMessage:
+    '문의가 정상적으로 접수되었습니다.\n빠른 시일 내에 연락드리겠습니다.',
 } as const
 
 export const footer = {

@@ -1,14 +1,61 @@
 import { useState, type FormEvent } from 'react'
+import emailjs from '@emailjs/browser'
 import Reveal from '../Reveal'
 import { contactSection } from '../../data/site'
 
+type FormData = {
+  name: string
+  company: string
+  email: string
+  phone: string
+  message: string
+}
+
+const initialFormData: FormData = {
+  name: '',
+  company: '',
+  email: '',
+  phone: '',
+  message: '',
+}
+
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false)
+  const [formData, setFormData] = useState<FormData>(initialFormData)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
   const { formLabels, placeholders } = contactSection
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function updateField<K extends keyof FormData>(key: K, value: FormData[K]) {
+    setFormData((prev) => ({ ...prev, [key]: value }))
+    if (error) setError(false)
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError(false)
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          company: formData.company || '미입력',
+          from_email: formData.email,
+          phone: formData.phone || '미입력',
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      setSuccess(true)
+      setFormData(initialFormData)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -38,10 +85,10 @@ export default function ContactSection() {
           </Reveal>
 
           <Reveal delay={120}>
-            {submitted ? (
+            {success ? (
               <div className="rounded-2xl border border-accent-500/30 bg-accent-100/50 p-8 text-center">
                 <i className="ri-checkbox-circle-line text-4xl text-accent-600" />
-                <p className="mt-4 font-medium text-foreground-900">
+                <p className="mt-4 whitespace-pre-line font-medium text-foreground-900">
                   {contactSection.successMessage}
                 </p>
               </div>
@@ -58,7 +105,10 @@ export default function ContactSection() {
                     <input
                       required
                       type="text"
-                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                      value={formData.name}
+                      onChange={(e) => updateField('name', e.target.value)}
+                      disabled={loading}
+                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 disabled:opacity-60"
                     />
                   </label>
                   <label className="block">
@@ -67,8 +117,11 @@ export default function ContactSection() {
                     </span>
                     <input
                       type="text"
+                      value={formData.company}
+                      onChange={(e) => updateField('company', e.target.value)}
                       placeholder={placeholders.company}
-                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm placeholder:text-foreground-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                      disabled={loading}
+                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm placeholder:text-foreground-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 disabled:opacity-60"
                     />
                   </label>
                   <label className="block">
@@ -78,7 +131,10 @@ export default function ContactSection() {
                     <input
                       required
                       type="email"
-                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                      value={formData.email}
+                      onChange={(e) => updateField('email', e.target.value)}
+                      disabled={loading}
+                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 disabled:opacity-60"
                     />
                   </label>
                   <label className="block">
@@ -87,7 +143,10 @@ export default function ContactSection() {
                     </span>
                     <input
                       type="tel"
-                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                      value={formData.phone}
+                      onChange={(e) => updateField('phone', e.target.value)}
+                      disabled={loading}
+                      className="w-full rounded-lg border border-background-200 px-4 py-3 text-sm focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 disabled:opacity-60"
                     />
                   </label>
                 </div>
@@ -99,18 +158,29 @@ export default function ContactSection() {
                     required
                     rows={5}
                     maxLength={500}
+                    value={formData.message}
+                    onChange={(e) => updateField('message', e.target.value)}
                     placeholder={placeholders.message}
-                    className="w-full resize-none rounded-lg border border-background-200 px-4 py-3 text-sm placeholder:text-foreground-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                    disabled={loading}
+                    className="w-full resize-none rounded-lg border border-background-200 px-4 py-3 text-sm placeholder:text-foreground-400 focus:border-primary-400 focus:outline-none focus:ring-1 focus:ring-primary-400 disabled:opacity-60"
                   />
                   <span className="mt-1 block text-right text-xs text-foreground-400">
                     최대 500자까지 입력 가능합니다
                   </span>
                 </label>
+
+                {error && (
+                  <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    전송에 실패했습니다. 다시 시도해주세요.
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="mt-6 w-full rounded-lg bg-primary-500 py-3.5 text-sm font-semibold text-background-50 transition hover:bg-primary-600 sm:w-auto sm:px-10"
+                  disabled={loading}
+                  className="mt-6 w-full rounded-lg bg-primary-500 py-3.5 text-sm font-semibold text-background-50 transition hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-10"
                 >
-                  {formLabels.submit}
+                  {loading ? '전송 중...' : formLabels.submit}
                 </button>
               </form>
             )}
